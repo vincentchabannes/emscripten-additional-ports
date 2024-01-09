@@ -1,5 +1,5 @@
 GMP_VERSION=6.2.1 #6.3.0
-GMP_INSTALL_DIR=$1 #/opt/emsdk-additional-ports/gmp
+GMP_INSTALL_DIR=$1
 WORK_DIR=$2 #/tmp/gmp
 
 #source /opt/emsdk/emsdk_env.sh
