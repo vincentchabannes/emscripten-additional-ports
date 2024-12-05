@@ -25,6 +25,8 @@ printf "using clang : emscripten : emcc -s USE_ZLIB=1 -s USE_ICU=1 : <archiver>e
     link=static \
     toolset=clang-emscripten \
     variant=release \
-    threading=single \
+    threading=multi \
     --with-program_options \
     install --prefix=${BOOST_INSTALL_DIR}
+
+# threading: single or multi
