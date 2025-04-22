@@ -22,10 +22,12 @@ printf "using clang : emscripten : emcc -s USE_ZLIB=1 -s USE_ICU=1 : <archiver>e
 
 ./b2 \
     -q \
+    address-model=32,64 \
     link=static \
     toolset=clang-emscripten \
     variant=release \
     threading=multi \
+    --layout=tagged \
     --with-program_options \
     install --prefix=${BOOST_INSTALL_DIR}
 
