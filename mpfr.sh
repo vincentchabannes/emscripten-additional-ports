@@ -1,4 +1,4 @@
-MPFR_VERSION=4.2.1 #4.0.2
+MPFR_VERSION=4.2.2 #4.2.1 #4.0.2
 MPFR_INSTALL_DIR=$1 #/opt/emsdk-additional-ports/mpfr
 WORK_DIR=$2 #/tmp/mpfr
 
