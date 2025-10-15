@@ -18,10 +18,11 @@ fi
 cd boost_${BOOST_VERSION_FILE}
 
 ./bootstrap.sh --with-icu=$EMSDK/upstream/emscripten/cache/ports/icu/icu
-printf "using clang : emscripten : emcc -s USE_ZLIB=1 -s USE_ICU=1 : <archiver>emar <ranlib>emranlib <linker>emlink <cxxflags>\"-std=c++17 -fPIC -s USE_ICU=1\" ;" | tee -a ./project-config.jam >/dev/null
+printf "using clang : emscripten : emcc -s USE_ZLIB=1 -s USE_ICU=1 : <archiver>emar <ranlib>emranlib <linker>emlink <cxxflags>\"-std=c++17 -pthread -fPIC -s USE_ICU=1\" ;" | tee -a ./project-config.jam >/dev/null
 
 ./b2 \
     -q \
+    -d+2 \
     address-model=32,64 \
     link=static \
     toolset=clang-emscripten \
