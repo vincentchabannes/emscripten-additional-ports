@@ -37,5 +37,5 @@ emcmake cmake \
         -DCMAKE_EXE_LINKER_FLAGS_INIT="${HDF5_LDFLAGS}" \
         -S . -B build
 
-cmake --build $PWD/build --verbose
-cmake --install $PWD/build --prefix $PWD/install
+cmake --build $PWD/build
+cmake --install $PWD/build --prefix ${HDF5_INSTALL_DIR}
