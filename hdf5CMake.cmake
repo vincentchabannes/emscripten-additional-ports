@@ -1,0 +1,21 @@
+# from https://github.com/HDFGroup/hdf5/discussions/3682
+# (additional settings for building with Emscripten)
+set(CMAKE_EXE_LINKER_FLAGS_INIT "-sNODERAWFS=1 -sFORCE_FILESYSTEM=1 -sSINGLE_FILE=1" CACHE INTERNAL "")
+set(HDF5_BUILD_JAVA OFF CACHE STRING "turn off building java for WASM target" FORCE)
+set(HDF5_BUILD_FORTRAN OFF CACHE STRING "turn off building fortran for WASM target" FORCE)
+set(HDF5_BUILD_TOOLS OFF CACHE STRING "turn off building tools for WASM target" FORCE)
+option(BUILD_TESTING "build testing" OFF)
+option(BUILD_SHARED_LIBS "Build shared libs" OFF)
+option(HDF5_BUILD_EXAMPLES "Build Examples" OFF)
+set(HDF5_PACKAGE_EXTLIBS ON CACHE BOOL "" FORCE)
+set (HDF5_ALLOW_EXTERNAL_SUPPORT "GIT" CACHE STRING "Allow External Library Building (NO GIT TGZ)" FORCE)
+
+option(HDF5_ENABLE_Z_LIB_SUPPORT "Enable ZLIB" ON)
+option (ZLIB_USE_LOCALCONTENT "Use local file for ZLIB FetchContent" OFF)
+set (ZLIB_GIT_URL "https://github.com/madler/zlib.git" CACHE STRING "Use ZLIB from  GitHub repository" FORCE)
+set (ZLIB_GIT_BRANCH "v1.3.1" CACHE STRING "" FORCE)
+
+option(HDF5_ENABLE_SZIP_SUPPORT "Enable SZIP" ON)
+option (LIBAEC_USE_LOCALCONTENT "Use local file for LIBAEC FetchContent" OFF)
+set (LIBAEC_GIT_URL "https://github.com/MathisRosenhauer/libaec.git" CACHE STRING "Use LIBAEC from  GitHub repository" FORCE)
+set (LIBAEC_GIT_BRANCH "v1.1.3" CACHE STRING "" FORCE)

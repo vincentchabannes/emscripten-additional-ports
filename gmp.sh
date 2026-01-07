@@ -31,7 +31,6 @@ GMP_CFLAGS="-pthread"
 GMP_CXXFLAGS="-pthread"
 GMP_LDFLAGS="-pthread"
 if [ "${MEMORY64_VALUE}" -gt 0 ]; then
-    # needed for macos builds
     GMP_CFLAGS="${GMP_CFLAGS} -s MEMORY64=${MEMORY64_VALUE}"
     GMP_CXXFLAGS="${GMP_CXXFLAGS} -s MEMORY64=${MEMORY64_VALUE}"
     GMP_LDFLAGS="${GMP_LDFLAGS} -s MEMORY64=${MEMORY64_VALUE}" # -mwasm64
